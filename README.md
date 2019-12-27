@@ -1,4 +1,30 @@
+# MMM-NEXT-FacialRecognition
+This is a set of improvements made to the original [``MMM-Facial-Recognition-OCV3``](https://github.com/normyx/MMM-Facial-Recognition-OCV3) module for a personal project. I don't use this module anymore since this summer due to the high CPU usage it has (also, better alternatives like [MMM-Face-Reco-DNN](https://github.com/nischi/MMM-Face-Reco-DNN) exists), so no more changes are expected to arrive.
 
+My customizations include:
+* Full Python 3 support, with the deprecation of all Python 2 support
+* Visual changes for errors and profile identification 
+
+There are also added options to ``config.js``:
+* ``showEye``: This shows an eye while the scan is in progress, like this one:
+
+<p align="center">
+  <img src="https://github.com/ferferga/MMM-NEXT-FacialRecognition/raw/master/screenshots/eye_icon.gif">
+</p>
+
+* ``welcomeMessage``: This shows a Welcome message everytime an user is identified. A profile photo is displayed on the mirror screen when the user is authenticated. You must add the profile photo for each user manually, placing the picture of each user under the following directory structure: ``{ModuleDirectory}/profiles/{username}``.
+
+* ``HideOnUnknown``: This shows a message every time a face is recognised, but ther's no match with any of the authorised users in the system.
+
+Additionally, now any kinds of errors are displayed in the mirror, so troubleshooting got much easier:
+
+<p align="center">
+  <img src="https://github.com/ferferga/MMM-NEXT-FacialRecognition/raw/master/screenshots/error.PNG">
+</p>
+
+That's, briefly, what I added to the module. Below is the original description of the module, alongside a description of all the installation, training and configuration process.
+
+-------
 # MMM-Facial-Recognition-OCV3
 This module is a facial recognition module (detection + recognition) for [MagicMirror²](https://magicmirror.builders/).
 This module is mainly inspired by the one developped by [paviro](https://github.com/paviro) : [MMM-Facial-Recognition](https:https://github.com/paviro/MMM-Facial-Recognition). 
