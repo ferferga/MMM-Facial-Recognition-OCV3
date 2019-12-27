@@ -8,12 +8,12 @@ module.exports = NodeHelper.create({
   
   python_start: function () {
     const self = this;
-    const pyshell = new PythonShell('modules/' + this.name + '/lib/mm/facerecognition.py', { mode: 'json', args: [JSON.stringify(this.config)]});
+    const pyshell = new PythonShell("modules/" + this.name + '/lib/mm/facerecognition.py', { mode: 'json', args: [JSON.stringify(this.config)], pythonPath: 'python3'});
 
     pyshell.on('message', function (message) {
-      
       if (message.hasOwnProperty('status')){
       console.log("[" + self.name + "] " + message.status);
+      self.sendSocketNotification('status', {action: "status", message: message.status})
       }
       if (message.hasOwnProperty('login')){
         console.log("[" + self.name + "] " + "User " + self.config.users[message.login.user - 1] + " with confidence " + message.login.confidence + " logged in.");
@@ -28,6 +28,7 @@ module.exports = NodeHelper.create({
     pyshell.end(function (err) {
       if (err) throw err;
       console.log("[" + self.name + "] " + 'finished running...');
+      self.sendSocketNotification('error', {action: "error"})
     });
   },
   

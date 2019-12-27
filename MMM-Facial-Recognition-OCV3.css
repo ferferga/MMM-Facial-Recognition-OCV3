@@ -1,0 +1,22 @@
+/* .MMM-Facial-Recognition-OCV3 .photo {
+    bottom: -1050px;
+    border: 5px solid grey;
+    height: 150px;
+    width: 150px;
+    border-radius: 100%;
+    box-shadow: 0 0 1px 0 black inset, 0 0 1px 0 black;
+  } */
+
+  .MMM-Facial-Recognition-OCV3 .photo{
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    border: 3px solid grey;
+    box-shadow: 0 0 1px 0 grey inset, 0 0 1px 0 grey;
+    background-clip: padding-box;
+    background-size: cover;
+    margin: 0 auto;
+    background-position: center center;
+    position: relative;
+    bottom: 50%;
+}

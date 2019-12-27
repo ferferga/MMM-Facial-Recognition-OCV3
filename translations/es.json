@@ -1,5 +1,7 @@
 {
   "message": "Hola %person, ¡que bueno verte de nuevo!",
   "title": "Facial-Recognition",
-  "stranger": "desconocido"
+  "stranger-message": "¡Hola! ¿Nos conocemos?",
+  "camError": "Ha habido un problema con la cámara.<br>Verifica que está correctamente configurada",
+  "error": "Ha habido un error desconocido. Reinicia tu espejo"
 }

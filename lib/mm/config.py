@@ -72,17 +72,23 @@ class MMConfig (CommonConfig):
         cls.toNode("status", "-" * 20)
         try:
             if cls.get("useUSBCam") == False:
-                import picam
-                cls.toNode("status", "PiCam loaded...")
-                cam = picam.OpenCVCapture()
-                cam.start()
-                return cam
+                try:
+                    import picam                    
+                    cam = picam.OpenCVCapture()
+                    cam.start()
+                    cls.toNode("status", "PiCam loaded...")
+                    return cam
+                except:
+                    cls.toNode("status", "Error while loading camera.")
             else:
                 raise Exception
         except Exception:
-            import webcam
-            cls.toNode("status", "Webcam loaded...")
-            return webcam.OpenCVCapture(device_id=0)
+            try:
+                import webcam
+                cls.toNode("status", "Webcam loaded...")
+                return webcam.OpenCVCapture(device_id=0)
+            except:
+                cls.toNode("status", "Error while loading camera.")
         cls.toNode("status", "-" * 20)
 
     
